@@ -1,0 +1,423 @@
+
+https://tokigames-challenge.herokuapp.com/api/flights/cheap
+
+{
+  "data": [
+    {
+      "route": "Cruz del Eje-Antalya",
+      "departure": 1558902656,
+      "arrival": 1558902656
+    },
+    {
+      "route": "Cruz del Eje-Tizi",
+      "departure": 1558902656,
+      "arrival": 1558902656
+    },
+    {
+      "route": "Greece-Tizi",
+      "departure": 1558902656,
+      "arrival": 1558902656
+    },
+    {
+      "route": "Paris-Tizi",
+      "departure": 1558902656,
+      "arrival": 1558902656
+    },
+    {
+      "route": "Antalya-Istabul",
+      "departure": 1558935605,
+      "arrival": 1558935605
+    },
+    {
+      "route": "Antalya-Venedik",
+      "departure": 1572169220,
+      "arrival": 1572169220
+    },
+    {
+      "route": "Amasra-Greece",
+      "departure": 1566423630,
+      "arrival": 1566423630
+    },
+    {
+      "route": "Istanbul-Antalya",
+      "departure": 1540629642,
+      "arrival": 1540802442
+    }
+  ]
+}
+
+
+
+
+https://tokigames-challenge.herokuapp.com/api/flights/business
+
+{
+  "data": [
+    {
+      "departure": "Ankara",
+      "arrival": "Antalya",
+      "departureTime": 1561627856,
+      "arrivalTime": 1564410656
+    },
+    {
+      "departure": "Cruz del Eje",
+      "arrival": "Tizi",
+      "departureTime": 1558902656,
+      "arrivalTime": 1558902656
+    },
+    {
+      "departure": "Antalya",
+      "arrival": "Istanbul",
+      "departureTime": 1563588000,
+      "arrivalTime": 1563678000
+    },
+    {
+      "departure": "Tizi",
+      "arrival": "Cruz del Eje",
+      "departureTime": 1558902656,
+      "arrivalTime": 1558902656
+    },
+    {
+      "departure": "Istanbul",
+      "arrival": "Antalya",
+      "departureTime": 1563588000,
+      "arrivalTime": 1563678000
+    },
+    {
+      "departure": "Istanbul",
+      "arrival": "Antalya",
+      "departureTime": 1558902656,
+      "arrivalTime": 1558902656
+    },
+    {
+      "departure": "Istanbul",
+      "arrival": "Antalya",
+      "departureTime": 1558902656,
+      "arrivalTime": 1558902656
+    },
+    {
+      "departure": "Singapore",
+      "arrival": "Istanbul",
+      "departureTime": 1563588000,
+      "arrivalTime": 1563678000
+    },
+    {
+      "departure": "Singapore",
+      "arrival": "Istanbul",
+      "departureTime": 1558907735,
+      "arrivalTime": 1558907735
+    },
+    {
+      "departure": "Istanbul",
+      "arrival": "Singapore",
+      "departureTime": 1558907746,
+      "arrivalTime": 1558907746
+    },
+    {
+      "departure": "Paris",
+      "arrival": "Singapore",
+      "departureTime": 1558907757,
+      "arrivalTime": 1558907757
+    },
+    {
+      "departure": "Greece",
+      "arrival": "Singapore",
+      "departureTime": 1558907761,
+      "arrivalTime": 1558907761
+    },
+    {
+      "departure": "Antalya",
+      "arrival": "Singapore",
+      "departureTime": 1558907764,
+      "arrivalTime": 1558907764
+    }
+  ]
+}
+
+
+
+
+Get all cheap flights
+http://localhost:8090/flight/cheap/all
+
+[
+    {
+        "route": "Istanbul-Antalya",
+        "departureTime": 1540629642,
+        "arrivalTime": 1540802442,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Cruz del Eje-Antalya",
+        "departureTime": 1558902656,
+        "arrivalTime": 1558902656,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Cruz del Eje-Tizi",
+        "departureTime": 1558902656,
+        "arrivalTime": 1558902656,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Greece-Tizi",
+        "departureTime": 1558902656,
+        "arrivalTime": 1558902656,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Paris-Tizi",
+        "departureTime": 1558902656,
+        "arrivalTime": 1558902656,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Antalya-Istabul",
+        "departureTime": 1558935605,
+        "arrivalTime": 1558935605,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Amasra-Greece",
+        "departureTime": 1566423630,
+        "arrivalTime": 1566423630,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Antalya-Venedik",
+        "departureTime": 1572169220,
+        "arrivalTime": 1572169220,
+        "flightType": "CHEAP"
+    }
+]
+
+
+
+
+Get all bz flights
+http://localhost:8090/flight/business/all
+
+[
+    {
+        "route": "Cruz del Eje-Tizi",
+        "departureTime": 1558902656,
+        "arrivalTime": 1558902656,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Tizi-Cruz del Eje",
+        "departureTime": 1558902656,
+        "arrivalTime": 1558902656,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Ankara-Antalya",
+        "departureTime": 1564410656,
+        "arrivalTime": 1561627856,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Antalya-Istanbul",
+        "departureTime": 1563678000,
+        "arrivalTime": 1563588000,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Istanbul-Antalya",
+        "departureTime": 1563678000,
+        "arrivalTime": 1563588000,
+        "flightType": "BUSINESS"
+    }
+]
+
+
+
+
+Get all flights  (aggregation of both cheap & business)
+http://localhost:8090/flight/all
+
+[
+    {
+        "route": "Istanbul-Antalya",
+        "departureTime": 1540629642,
+        "arrivalTime": 1540802442,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Cruz del Eje-Antalya",
+        "departureTime": 1558902656,
+        "arrivalTime": 1558902656,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Cruz del Eje-Tizi",
+        "departureTime": 1558902656,
+        "arrivalTime": 1558902656,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Cruz del Eje-Tizi",
+        "departureTime": 1558902656,
+        "arrivalTime": 1558902656,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Greece-Tizi",
+        "departureTime": 1558902656,
+        "arrivalTime": 1558902656,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Paris-Tizi",
+        "departureTime": 1558902656,
+        "arrivalTime": 1558902656,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Istanbul-Izmir",
+        "departureTime": 1558906860,
+        "arrivalTime": 1558906860,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Paris-Izmir",
+        "departureTime": 1558906871,
+        "arrivalTime": 1558906871,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Istanbul-Ankara",
+        "departureTime": 1558928456,
+        "arrivalTime": 1558928456,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Antalya-Istabul",
+        "departureTime": 1558935605,
+        "arrivalTime": 1558935605,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Ankara-Antalya",
+        "departureTime": 1564410656,
+        "arrivalTime": 1561627856,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Antalya-Istanbul",
+        "departureTime": 1563678000,
+        "arrivalTime": 1563588000,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Amasra-Greece",
+        "departureTime": 1566423630,
+        "arrivalTime": 1566423630,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Antalya-Venedik",
+        "departureTime": 1572169220,
+        "arrivalTime": 1572169220,
+        "flightType": "CHEAP"
+    }
+]
+
+
+
+
+Get flights by page
+http://localhost:8090/flight/page?page=2&size=3
+
+[
+    {
+        "route": "Paris-Tizi",
+        "departureTime": 1558902656,
+        "arrivalTime": 1558902656,
+        "flightType": "CHEAP"
+    },
+    {
+        "route": "Tizi-Cruz del Eje",
+        "departureTime": 1558902656,
+        "arrivalTime": 1558902656,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Singapore-Istanbul",
+        "departureTime": 1558907735,
+        "arrivalTime": 1558907735,
+        "flightType": "BUSINESS"
+    }
+]
+
+
+
+
+Get flights by filter
+http://localhost:8080/flight/filter?flightType=BUSINESS&route=Singa&arrivalTimeFrom=10&arrivalTimeTo=9558902656
+
+[
+    {
+        "route": "Singapore-Istanbul",
+        "departureTime": 1558907735,
+        "arrivalTime": 1558907735,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Istanbul-Singapore",
+        "departureTime": 1558907746,
+        "arrivalTime": 1558907746,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Paris-Singapore",
+        "departureTime": 1558907757,
+        "arrivalTime": 1558907757,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Greece-Singapore",
+        "departureTime": 1558907761,
+        "arrivalTime": 1558907761,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Singapore-Istanbul",
+        "departureTime": 1563678000,
+        "arrivalTime": 1563588000,
+        "flightType": "BUSINESS"
+    }
+]
+
+
+
+
+Get flights by filter and page
+http://localhost:8090/flight/filter-page?flightType=&route=l&arrivalTimeFrom=10&arrivalTimeTo=0&page=1&size=5
+
+[
+    {
+        "route": "Ankara-Antalya",
+        "departureTime": 1564410656,
+        "arrivalTime": 1561627856,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Antalya-Istanbul",
+        "departureTime": 1563678000,
+        "arrivalTime": 1563588000,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Istanbul-Antalya",
+        "departureTime": 1563678000,
+        "arrivalTime": 1563588000,
+        "flightType": "BUSINESS"
+    },
+    {
+        "route": "Antalya-Venedik",
+        "departureTime": 1572169220,
+        "arrivalTime": 1572169220,
+        "flightType": "CHEAP"
+    }
+]
