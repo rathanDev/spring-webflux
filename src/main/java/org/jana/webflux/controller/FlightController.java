@@ -38,4 +38,22 @@ public class FlightController {
         return flightService.getFlightsByPage(page, size);
     }
 
+    @GetMapping("/filter")
+    public Flux<TokiFlight> getFlightsByFilter(@RequestParam(required = false) String flightType,
+                                               @RequestParam(required = false) String route,
+                                               @RequestParam(required = false) Long arrivalTimeFrom,
+                                               @RequestParam(required = false) Long arrivalTimeTo) {
+        return flightService.getFlightsByFilter(flightType, route, arrivalTimeFrom, arrivalTimeTo);
+    }
+
+    @GetMapping("/filter-page")
+    public Flux<TokiFlight> getFlightsByFilterPage(@RequestParam(required = false) String flightType,
+                                                   @RequestParam(required = false) String route,
+                                                   @RequestParam(required = false) Long arrivalTimeFrom,
+                                                   @RequestParam(required = false) Long arrivalTimeTo,
+                                                   @RequestParam(required = false) Integer page,
+                                                   @RequestParam(required = false) Integer size) {
+        return flightService.getFlightsByFilterPage(flightType, route, arrivalTimeFrom, arrivalTimeTo, page, size);
+    }
+
 }

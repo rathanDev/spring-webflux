@@ -90,4 +90,66 @@ public class FlightService {
                 .take(size);
     }
 
+    public Flux<TokiFlight> getFlightsByFilter(String flightTypeString,
+                                               String route,
+                                               long arrivalTimeFrom,
+                                               long arrivalTimeTo) {
+        log.info("Get flights by filter type:" + flightTypeString + " route:" + route + " arrivalTimeFrom:" + arrivalTimeFrom + " arrivalTimeTo:" + arrivalTimeTo);
+
+        Flux<TokiFlight> flights;
+
+        if (flightTypeString != null && !flightTypeString.trim().isEmpty()) {
+            FlightType flightType;
+            try {
+                flightType = FlightType.valueOf(flightTypeString.toUpperCase());
+
+                if (flightType == FlightType.CHEAP) {
+                    flights = getAllCheapFlights();
+                } else if (flightType == FlightType.BUSINESS) {
+                    flights = getAllBusinessFlights();
+                } else {
+                    flights = getAllFlights();
+                }
+            } catch (Exception e) {
+                log.warning("Invalid flight type: " + flightTypeString);
+                flights = getAllFlights();
+            }
+        } else {
+            flights = getAllFlights();
+        }
+
+        if (route != null && !route.trim().isEmpty()) {
+            flights = flights.filter(e -> e.getRoute().contains(route));
+        }
+
+        if (arrivalTimeFrom != 0) {
+            flights = flights.filter(e -> e.getArrivalTime() >= arrivalTimeFrom);
+        }
+
+        if (arrivalTimeTo != 0) {
+            flights = flights.filter(e -> e.getArrivalTime() <= arrivalTimeTo);
+        }
+
+        return flights;
+    }
+
+    public Flux<TokiFlight> getFlightsByFilterPage(String flightTypeString,
+                                                   String route,
+                                                   long arrivalTimeFrom,
+                                                   long arrivalTimeTo,
+                                                   int page,
+                                                   int size) {
+        log.info("Get flights by filter-page type:" + flightTypeString + " route:" + route + " arrivalTimeFrom:" + arrivalTimeFrom + " arrivalTimeTo:" + arrivalTimeTo + " page:" + page + " size:" + size);
+
+        Flux<TokiFlight> flights = getFlightsByFilter(flightTypeString, route, arrivalTimeFrom, arrivalTimeTo);
+
+        if (page != 0 && size != 0) {
+            flights = flights
+                    .skip(page * size)
+                    .take(size);
+        }
+
+        return flights;
+    }
+
 }
