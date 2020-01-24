@@ -4,6 +4,7 @@ import org.jana.webflux.model.TokiFlight;
 import org.jana.webflux.service.FlightService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
@@ -30,6 +31,11 @@ public class FlightController {
     @GetMapping("/all")
     public Flux<TokiFlight> getAllFlights() {
         return flightService.getAllFlights();
+    }
+
+    @GetMapping("/page")
+    public Flux<TokiFlight> getFlightsByPage(@RequestParam int page, @RequestParam int size) {
+        return flightService.getFlightsByPage(page, size);
     }
 
 }

@@ -82,4 +82,12 @@ public class FlightService {
                 .sort();
     }
 
+    public Flux<TokiFlight> getFlightsByPage(int page, int size) {
+        log.info("Get flights by page. page:" + page + " size:" + size);
+
+        return getAllFlights()
+                .skip(page * size)
+                .take(size);
+    }
+
 }
