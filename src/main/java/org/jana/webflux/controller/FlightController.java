@@ -27,4 +27,9 @@ public class FlightController {
         return flightService.getAllBusinessFlights();
     }
 
+    @GetMapping("/all")
+    public Flux<TokiFlight> getAllFlights() {
+        return flightService.getAllFlights();
+    }
+
 }

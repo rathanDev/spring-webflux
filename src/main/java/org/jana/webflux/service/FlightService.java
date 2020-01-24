@@ -56,4 +56,30 @@ public class FlightService {
                 .sort();
     }
 
+    public Flux<TokiFlight> getAllFlights() {
+        log.info("Aggregate both cheap & business flights. Sort them");
+
+        Flux<TokiFlight> cheapFlights = webClient
+                .get()
+                .uri(cheapFlightApi)
+                .retrieve()
+                .bodyToMono(CheapFlightData.class)
+                .map(CheapFlightData::getData)
+                .flatMapMany(Flux::fromIterable)
+                .map(e -> new TokiFlight(e.getRoute(), FlightType.CHEAP, e.getDepartureTime(), e.getArrivalTime()));
+
+        Flux<TokiFlight> businessFlights = webClient
+                .get()
+                .uri(businessFlightApi)
+                .retrieve()
+                .bodyToMono(BusinessFlightData.class)
+                .map(BusinessFlightData::getData)
+                .flatMapMany(Flux::fromIterable)
+                .map(e -> new TokiFlight(e.getDeparture() + "-" + e.getArrival(), FlightType.BUSINESS, e.getArrivalTime(), e.getDepartureTime()));
+
+        return Flux
+                .concat(cheapFlights, businessFlights)
+                .sort();
+    }
+
 }
